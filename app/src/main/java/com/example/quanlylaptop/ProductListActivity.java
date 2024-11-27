@@ -2,7 +2,10 @@ package com.example.quanlylaptop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,6 +22,7 @@ public class ProductListActivity extends AppCompatActivity {
     private ProductAdapter productAdapter;
     private List<Product> productList;
     private DatabaseHelper databaseHelper;
+    private EditText etSearchProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class ProductListActivity extends AppCompatActivity {
 
         // Khởi tạo các view
         rvProductList = findViewById(R.id.rvProductList);
+        etSearchProduct = findViewById(R.id.etSearchProduct);
+        Button btnSearchProduct = findViewById(R.id.btnSearchProduct);
         Button btnAddProduct = findViewById(R.id.btnAddProduct);
 
         // Khởi tạo DatabaseHelper
@@ -39,13 +45,25 @@ public class ProductListActivity extends AppCompatActivity {
         productAdapter = new ProductAdapter(productList, product -> {
             // Chuyển đến màn hình chi tiết sản phẩm
             Intent intent = new Intent(ProductListActivity.this, ProductDetailActivity.class);
-            intent.putExtra("productId", product.getId());  // Truyền ID sản phẩm qua Intent
+            intent.putExtra("productId", product.getId()); // Truyền ID sản phẩm qua Intent
             startActivity(intent);
         });
 
         // Thiết lập RecyclerView
         rvProductList.setLayoutManager(new LinearLayoutManager(this));
         rvProductList.setAdapter(productAdapter);
+
+        // Xử lý sự kiện tìm kiếm
+        btnSearchProduct.setOnClickListener(v -> {
+            String query = etSearchProduct.getText().toString().trim();
+            if (!TextUtils.isEmpty(query)) {
+                // Lọc danh sách dựa trên từ khóa tìm kiếm
+                productAdapter.filter(query);
+            } else {
+                // Hiển thị toàn bộ danh sách nếu ô tìm kiếm trống
+                productAdapter.filter("");
+            }
+        });
 
         // Xử lý sự kiện click nút "Thêm sản phẩm"
         btnAddProduct.setOnClickListener(v -> {

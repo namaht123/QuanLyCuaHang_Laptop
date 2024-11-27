@@ -162,4 +162,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.delete(TABLE_PRODUCTS, COLUMN_ID + " = ?", new String[]{String.valueOf(productId)});
         db.close();
     }
+
+    //timkiem
+    // Tìm kiếm sản phẩm theo tên hoặc mã
+    public List<Product> searchProducts(String keyword) {
+        List<Product> products = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // Truy vấn sản phẩm với điều kiện LIKE
+        String query = "SELECT * FROM " + TABLE_PRODUCTS +
+                " WHERE " + COLUMN_NAME + " LIKE ? OR " + COLUMN_CODE + " LIKE ?";
+        Cursor cursor = db.rawQuery(query, new String[]{"%" + keyword + "%", "%" + keyword + "%"});
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                // Kiểm tra cột có tồn tại hay không
+                int idColumnIndex = cursor.getColumnIndex(COLUMN_ID);
+                int nameColumnIndex = cursor.getColumnIndex(COLUMN_NAME);
+                int codeColumnIndex = cursor.getColumnIndex(COLUMN_CODE);
+                int priceColumnIndex = cursor.getColumnIndex(COLUMN_PRICE);
+                int imageUrlColumnIndex = cursor.getColumnIndex(COLUMN_IMAGE_URL);
+
+                if (idColumnIndex != -1 && nameColumnIndex != -1 && codeColumnIndex != -1 && priceColumnIndex != -1 && imageUrlColumnIndex != -1) {
+                    int id = cursor.getInt(idColumnIndex);
+                    String name = cursor.getString(nameColumnIndex);
+                    String code = cursor.getString(codeColumnIndex);
+                    double price = cursor.getDouble(priceColumnIndex);
+                    String imageUrl = cursor.getString(imageUrlColumnIndex);
+
+                    Product product = new Product(id, name, code, price, imageUrl);
+                    products.add(product);
+                }
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        db.close();
+        return products;
+    }
+
 }
