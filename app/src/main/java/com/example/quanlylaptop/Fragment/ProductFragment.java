@@ -1,42 +1,49 @@
-package com.example.quanlylaptop;
+package com.example.quanlylaptop.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.EditText;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quanlylaptop.Adapter.ProductAdapter;
+import com.example.quanlylaptop.AddProductActivity;
 import com.example.quanlylaptop.DbHelper.DatabaseHelper;
 import com.example.quanlylaptop.Model.Product;
+import com.example.quanlylaptop.ProductDetailActivity;
+import com.example.quanlylaptop.R;
 
 import java.util.List;
 
-public class ProductListActivity extends AppCompatActivity {
+public class ProductFragment extends Fragment {
     private RecyclerView rvProductList;
     private ProductAdapter productAdapter;
     private List<Product> productList;
     private DatabaseHelper databaseHelper;
     private EditText etSearchProduct;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_list);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_product_list, container, false);
 
         // Khởi tạo các view
-        rvProductList = findViewById(R.id.rvProductList);
-        etSearchProduct = findViewById(R.id.etSearchProduct);
-        Button btnSearchProduct = findViewById(R.id.btnSearchProduct);
-        Button btnAddProduct = findViewById(R.id.btnAddProduct);
+        rvProductList = view.findViewById(R.id.rvProductList);
+        etSearchProduct = view.findViewById(R.id.etSearchProduct);
+        ImageButton btnSearchProduct = view.findViewById(R.id.btnSearchProduct);  // Thay Button thành ImageButton
+        ImageButton btnAddProduct = view.findViewById(R.id.btnAddProduct);        // Thay Button thành ImageButton
 
         // Khởi tạo DatabaseHelper
-        databaseHelper = new DatabaseHelper(this);
+        databaseHelper = new DatabaseHelper(getContext());
 
         // Lấy danh sách sản phẩm từ cơ sở dữ liệu SQLite
         productList = databaseHelper.getAllProducts();
@@ -44,13 +51,13 @@ public class ProductListActivity extends AppCompatActivity {
         // Khởi tạo adapter và thiết lập sự kiện click cho sản phẩm
         productAdapter = new ProductAdapter(productList, product -> {
             // Chuyển đến màn hình chi tiết sản phẩm
-            Intent intent = new Intent(ProductListActivity.this, ProductDetailActivity.class);
+            Intent intent = new Intent(getActivity(), ProductDetailActivity.class);
             intent.putExtra("productId", product.getId()); // Truyền ID sản phẩm qua Intent
             startActivity(intent);
         });
 
         // Thiết lập RecyclerView
-        rvProductList.setLayoutManager(new LinearLayoutManager(this));
+        rvProductList.setLayoutManager(new LinearLayoutManager(getContext()));
         rvProductList.setAdapter(productAdapter);
 
         // Xử lý sự kiện tìm kiếm
@@ -68,13 +75,15 @@ public class ProductListActivity extends AppCompatActivity {
         // Xử lý sự kiện click nút "Thêm sản phẩm"
         btnAddProduct.setOnClickListener(v -> {
             // Chuyển đến màn hình thêm sản phẩm mới
-            Intent intent = new Intent(ProductListActivity.this, AddProductActivity.class);
+            Intent intent = new Intent(getActivity(), AddProductActivity.class);
             startActivity(intent);
         });
+
+        return view;
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         // Cập nhật danh sách sản phẩm khi quay lại màn hình
         productList.clear();

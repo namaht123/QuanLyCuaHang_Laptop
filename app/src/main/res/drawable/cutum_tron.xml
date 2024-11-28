@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#03A9F4" /> <!-- Màu nền của button -->
+    <corners android:radius="28dp" /> <!-- Để tạo hình tròn, radius phải bằng 1/2 chiều rộng hoặc chiều cao -->
+</shape>
