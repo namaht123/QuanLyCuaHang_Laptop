@@ -1,7 +1,0 @@
-<!-- res/drawable/ic_search_resized.xml -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:drawable="@drawable/ic_seach"
-        android:width="40dp"
-        android:height="40dp"/>
-</layer-list>

@@ -49,7 +49,9 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation ("com.google.android.material:material:1.9.0")
-
+    implementation ("androidx.appcompat:appcompat:1.6.1")
+    implementation ("androidx.core:core:1.10.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 
 
 }
