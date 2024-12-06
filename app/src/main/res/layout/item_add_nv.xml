@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#BA9999">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THÊM NHÂN VIÊN"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#3F51B5"/>
+        <EditText
+            android:id="@+id/edtTen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên nhân viên"/>
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập email"/>
+        <EditText
+            android:id="@+id/edtDiaChi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập địa chỉ"/>
+        <EditText
+            android:id="@+id/edtSDT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập SDT"/>
+        <EditText
+            android:id="@+id/edtChucVu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập chức vụ"/>
+        <EditText
+            android:id="@+id/edtUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập username"/>
+        <EditText
+            android:id="@+id/edtPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập password"/>
+        <Button
+            android:id="@+id/btnADDNV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm "
+            android:backgroundTint="#FF5722"
+            android:textAllCaps="true"
+            />
+        <Button
+            android:id="@+id/btnThoat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:backgroundTint="@color/black"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">QuanLyLapTop</string>
+    <string name="app_name">Duan1_Nhom5</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome,</string>
+    <string name="nav_header_subtitle">Children Wear</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="Sign_up">Don\'t have an account?<b>Sign up</b></string>
+
+    <string name="menu_sanpham">Sản phẩm</string>
+    <string name="menu_donhang">Quản lý đơn hàng</string>
+    <string name="menu_giohang">Giỏ hàng của bạn</string>
+    <string name="menu_qlsanpham">Quản lý sản phẩm</string>
+    <string name="menu_nhanvien">Quản lý nhân viên</string>
+    <string name="menu_top">Top quần áo bán chạy</string>
+    <string name="menu_doanhthu">Doanh thu</string>
+    <string name="menu_doimk">Đổi mật khẩu</string>
+    <string name="menu_dangxuat">Đăng xuất</string>
+    <string name="menu_donhangcuabant">Đơn hàng của bạn</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/img_1"
+    tools:context=".ui.DoanhThuFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Doanh Thu"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Từ ngày:"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edTuNgay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="DD//MM//YYYY"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/btnTuNgay"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/calendar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Đến ngày:"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edDenNgay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="DD//MM//YYYY"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/btnDenNgay"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/calendar" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDoanhThu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom"
+        android:drawableStart="@drawable/ic_money"
+        android:text="Doanh Thu"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvDoanhThu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Doanh thu:"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

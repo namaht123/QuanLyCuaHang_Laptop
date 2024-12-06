@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DoiMatKhauFragment"
+    android:orientation="vertical"
+    android:background="@drawable/img_1">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/img_2"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/edtUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập username"
+            android:background="@drawable/khung5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/edtPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập password"
+            android:inputType="textPassword"
+            android:background="@drawable/khung5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New pass"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/edtnewpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập new pass"
+            android:inputType="textPassword"
+            android:background="@drawable/khung5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/edtrenewPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập lại new pass"
+            android:inputType="textPassword"
+            android:background="@drawable/khung5"/>
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnSAVE"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="SAVE"
+                android:background="@drawable/khung_button"
+
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:textAllCaps="true"/>
+            <Button
+                android:id="@+id/btnThoat"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Trở về"
+                android:background="@drawable/khung_button"
+
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:textAllCaps="true"/>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

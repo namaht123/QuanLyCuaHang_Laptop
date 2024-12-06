@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="MauMenu">#978A8A</color>
+
+    <color name="nutBam">#A4103C</color>
+
+
 </resources>

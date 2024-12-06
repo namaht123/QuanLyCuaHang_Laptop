@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sanpham"
+            android:icon="@drawable/icons8_home_30"
+            android:textColor="#978A8A"
+            android:title="@string/menu_sanpham" />
+        <item
+            android:id="@+id/nav_donhang"
+            android:icon="@drawable/icons8_bill_30"
+            android:textColor="@color/MauMenu"
+            android:title="@string/menu_donhang" />
+        <item
+            android:id="@+id/nav_donhangcuaban"
+            android:icon="@drawable/icons8_bill_30"
+            android:textColor="@color/MauMenu"
+            android:title="@string/menu_donhangcuabant" />
+        <item
+            android:id="@+id/nav_giohang"
+            android:icon="@drawable/icons8_cart_30"
+            android:textColor="@color/MauMenu"
+            android:title="@string/menu_giohang" />
+        <item
+            android:id="@+id/nav_qlsanpham"
+            android:icon="@drawable/icons8_product_30"
+            android:textColor="@color/MauMenu"
+            android:title="@string/menu_qlsanpham" />
+        <item
+            android:id="@+id/nav_nhanvien"
+            android:icon="@drawable/icons8_staff_30"
+            android:textColor="@color/MauMenu"
+            android:title="@string/menu_nhanvien" />
+        <item
+            android:textColor="@color/MauMenu"
+            android:title="Thống kê">
+            <menu>
+                <item
+                    android:id="@+id/nav_top"
+                    android:icon="@drawable/icons8_up_30"
+                    android:textColor="@color/MauMenu"
+                    android:title="@string/menu_top" />
+                <item
+                    android:id="@+id/nav_doanhthu"
+                    android:icon="@drawable/icons8_money_30"
+                    android:textColor="@color/MauMenu"
+                    android:title="@string/menu_doanhthu" />
+            </menu>
+        </item>
+        <item
+            android:textColor="@color/MauMenu"
+            android:title="Người dùng">
+            <menu>
+                <item
+                    android:id="@+id/nav_doimk"
+                    android:icon="@drawable/icons8_key_30"
+                    android:textColor="@color/MauMenu"
+                    android:title="@string/menu_doimk" />
+                <item
+                    android:id="@+id/nav_dangxuat"
+                    android:icon="@drawable/icons8_logout_30"
+                    android:textColor="@color/MauMenu"
+                    android:title="@string/menu_dangxuat" />
+            </menu>
+        </item>
+    </group>
+</menu>
